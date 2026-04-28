@@ -409,7 +409,3 @@ pytest tests/ -v
 ```
 
 ---
-
-<div align="center">
-Built with ❤️ as part of the <strong>AI Freelance Business Launch Guide 2026</strong> · AXONN AI STUDIO
-</div>
