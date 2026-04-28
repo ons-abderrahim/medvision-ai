@@ -1,0 +1,28 @@
+##############################################################
+# MedVision AI — DenseNet-121 / CheXpert Training Config
+##############################################################
+
+model:
+  backbone: densenet121
+  num_classes: 14
+  pretrained: true
+  dropout_rate: 0.2
+
+data:
+  dataset: chexpert
+  root: data/chexpert
+  image_size: 320
+  augmentation: strong
+  uncertainty_policy: zeros   # zeros | ones
+  frontal_only: true
+
+training:
+  epochs: 50
+  batch_size: 32
+  lr: 1.0e-4
+  weight_decay: 1.0e-4
+  scheduler: cosine           # cosine | step
+  mixup_alpha: 0.4
+  amp: true                   # Automatic Mixed Precision
+
+output_dir: checkpoints/densenet_chexpert

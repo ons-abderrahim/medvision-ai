@@ -1,0 +1,26 @@
+##############################################################
+# MedVision AI — EfficientNet-B4 / ISIC Training Config
+##############################################################
+
+model:
+  backbone: efficientnet_b4
+  num_classes: 8
+  pretrained: true
+  dropout_rate: 0.3
+
+data:
+  dataset: isic
+  root: data/isic
+  image_size: 380
+  augmentation: strong
+
+training:
+  epochs: 40
+  batch_size: 16
+  lr: 5.0e-5
+  weight_decay: 1.0e-4
+  scheduler: cosine
+  mixup_alpha: 0.3
+  amp: true
+
+output_dir: checkpoints/efficientnet_isic
